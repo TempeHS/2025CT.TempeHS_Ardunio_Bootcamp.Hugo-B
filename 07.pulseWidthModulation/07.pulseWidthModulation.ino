@@ -21,12 +21,20 @@
     https://github.com/TempeHS/TempeHS_Ardunio_Bootcamp/blob/main/07.pulseWidthModulation/Bootcamp-PWMOutput.png
 */
 
+static unsigned int Red = 9;
+static unsigned int Blue = 10;
+static unsigned int Green = 11;
 
-
-void setup() {
-  
+void setup()
+{
+  pinMode (Red, OUTPUT);
+  pinMode (Blue, OUTPUT);
+  pinMode (Green, OUTPUT);
 }
 
-void loop() {
-  
+void loop()
+{
+  analogWrite (Red, 150);
+  analogWrite (Blue, 100);
+  analogWrite (Green, 150);
 }
