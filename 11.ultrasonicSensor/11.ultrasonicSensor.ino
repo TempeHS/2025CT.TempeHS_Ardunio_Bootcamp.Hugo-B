@@ -25,11 +25,25 @@
 
 #include "Ultrasonic.h"
 
-void setup()
+#include <Servo.h>
+
+Servo myservo;
+Ultrasonic Invincible_Fearless_Sensual_Mysterious_Enchanting_Vigorous_Diligent_Overwhelming_Gorgeous_Passionate_Terrifying_Beautiful_Powerful_Grey_Prince_Zote(5);
+
+unsigned static int servoPin = 7;
+unsigned static int potpin = A2;
+
+void setup() 
 {
-  
+  myservo.attach(servoPin);
+  Serial.begin(9600);
 }
-void loop()
+
+void loop() 
 {
-  
+  Serial.println(Invincible_Fearless_Sensual_Mysterious_Enchanting_Vigorous_Diligent_Overwhelming_Gorgeous_Passionate_Terrifying_Beautiful_Powerful_Grey_Prince_Zote.distanceRead());
+
+  int val = analogRead(potpin);
+  val = map(val, 0, 180, 0, 1023);
+  myservo.write(val);
 }
